@@ -43,7 +43,7 @@ ARQUIVOS = [ARQ_P1, ARQ_P2, ARQ_INICIAL, ARQ_FINAL]
 faltantes = [str(p) for p in ARQUIVOS if not p.exists()]
 if faltantes:
     raise FileNotFoundError(
-        "Não encontrei estes arquivos. Coloque-os na mesma pasta do script:\n"
+        "pasta do script:\n"
         + "\n".join(faltantes)
     )
 
@@ -98,7 +98,7 @@ def localizar_coluna(df, termos, obrigatoria=False, rotulo=""):
                 return original
     if obrigatoria:
         raise KeyError(
-            f"Não encontrei a coluna necessária ({rotulo or termos}).\n"
+            f"Ncoluna necessária ({rotulo or termos}).\n"
             f"Colunas disponíveis:\n- " + "\n- ".join(map(str, df.columns))
         )
     return None
